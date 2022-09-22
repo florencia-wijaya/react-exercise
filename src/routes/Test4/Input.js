@@ -1,8 +1,12 @@
+const Input = ({ onSubmit }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(e.target.search.value);
+  }
 
-const Input = () => {
   return (
-    <form>
-      <input type="text" placeholder="search" />
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="search" name="search"/>
       <button type="submit">🔍</button>
     </form>
   )

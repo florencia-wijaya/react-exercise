@@ -17,11 +17,16 @@ const cssLabel = css({
   }
 })
 
-const Label = () => {
+const Label = ({ input, onClick }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    onClick();
+  }
+
   return (
     <span className={cssLabel}>
-      RENDER VALUE HERE
-      <button type="button">⊗</button>
+      {input.length ? input : "RENDER VALUE HERE"}
+      <button type="button" onClick={handleClick}>⊗</button>
     </span>
   )
 }
